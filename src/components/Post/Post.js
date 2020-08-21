@@ -19,22 +19,23 @@ function Post({
     return (
         <div className="post">
             <div className="post__avatar">
-                <Avatar src="https://avatars2.githubusercontent.com/u/54438992?s=400&u=1851015ae1e0dc7269acf7ac41194e6ab8fb0672&v=4"></Avatar>
+                <Avatar src={avatar}></Avatar>
             </div>
             <div className="post__body">
                 <div className="post__header">
                     <div className="post__headerText">
                         <h3>
-                            Calum {" "}
+                            {displayName} {" "}
                             <span className="post__headerSpecial">
-                                <VerifiedUserIcon className="post__badge"/>
+                                { verified && <VerifiedUserIcon className="post__badge"/>}
+                                @{username}
                             </span>
                         </h3>
                     </div>
                     <div className="post__headerDescription">
-                        <p>Some dummy text.</p>
+                        <p>{text}</p>
                     </div>
-                    <img src="https://media.giphy.com/media/3xz2BvpyQkY46uKrEQ/giphy.gif" alt="" />
+                    <img src={image} alt="" />
                     <div className="post__footer">
                         <ChatBubbleOutlineIcon fontSize="small" />
                         <RepeatIcon fontSize="small" />

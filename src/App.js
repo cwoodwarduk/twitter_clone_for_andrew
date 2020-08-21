@@ -6,14 +6,12 @@ import Widgets from './components/Widgets/Widgets';
 
 function App() {
   return (
-    <div className="app">
+    <div className="appBody">
 
       <Sidebar />
 
-      {/* feed */}
       <Feed />
 
-      {/* widgets */}
       <Widgets />
 
     </div>
