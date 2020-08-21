@@ -16,21 +16,21 @@ function Sidebar() {
         <div className="sidebar">
             
             {/* twitter icon */}
-            < TwitterIcon />
+            <TwitterIcon className="sidebar__twitterIcon" />
 
-            < SidebarOption active Icon={HomeIcon} text="Home" />
+            <SidebarOption active Icon={HomeIcon} text="Home" />
      
-            < SidebarOption Icon={SearchIcon} text="Explore" />
+            <SidebarOption Icon={SearchIcon} text="Explore" />
 
-            < SidebarOption Icon={NotificationsNoneIcon} text="Notifications" />
+            <SidebarOption Icon={NotificationsNoneIcon} text="Notifications" />
   
-            < SidebarOption Icon={MailOutlineIcon} text="Messages" />
+            <SidebarOption Icon={MailOutlineIcon} text="Messages" />
     
-            < SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" />
+            <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" />
 
-            < SidebarOption Icon={PermIdentityIcon} text="Lists" />
+            <SidebarOption Icon={PermIdentityIcon} text="Lists" />
 
-            < SidebarOption Icon={MoreHorizIcon} text="More" />
+            <SidebarOption Icon={MoreHorizIcon} text="More" />
 
             <Button variant="outlined" className="sidebar__tweet" fullWidth>Tweet</Button>
         </div>
