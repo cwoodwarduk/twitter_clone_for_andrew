@@ -8,7 +8,7 @@
 }
 
 .sidebar__twitterIcon {
-    color: var(--twitter-color);
+    color: var(--twitter-color) !important;
     font-size: 30px !important;
     margin-left: 20px;
     margin-bottom: 20px;
