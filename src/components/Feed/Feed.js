@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Feed.css';
 import TweetBox from '../TweetBox/TweetBox';
 import Post from '../Post/Post';
+import db from '../../firebase';
+import FlipMove from 'react-flip-move';
 
 function Feed() {
 
     const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        db.collection('posts').orderBy("postedAt", "desc").onSnapshot(snapshot => (
+            setPosts(snapshot.docs.map(doc => doc.data()))
+        ))
+    }, []);
 
     return (
         <div className="feed">
@@ -15,15 +23,21 @@ function Feed() {
 
             <TweetBox />
 
-            <Post 
-                avatar="https://avatars2.githubusercontent.com/u/54438992?s=400&u=1851015ae1e0dc7269acf7ac41194e6ab8fb0672&v=4"
-                displayName="Calum"
-                username="cwdevuk"
-                verified={true}
-                text="Some dummy text."
-                image="https://media.giphy.com/media/3xz2BvpyQkY46uKrEQ/giphy.gif"
-            />
-        
+            <FlipMove>
+                {posts.map(post => (
+                    <Post
+                        key={post.id} 
+                        avatar={post.avatar}
+                        displayName={post.displayName}
+                        username={post.username}
+                        verified={post.verified}
+                        postedAt={new Date(post.postedAt.seconds * 1000).toTimeString()}
+                        text={post.text}
+                        image={post.image}
+                    />
+                ))}
+            </FlipMove>
+            
         </div>
     )
 }
