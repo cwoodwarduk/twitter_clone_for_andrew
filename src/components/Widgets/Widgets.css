@@ -22,6 +22,26 @@
     color: gray;
 }
 
+.widgets__signUp {
+    margin-top: 15px;
+    margin-left: 20px;
+    padding: 20px;
+    border: 1px solid var(--twitter-background);
+    border-radius: 20px;
+}
+
+.widgets__signUp > h2 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.widgets__signUp > p {
+    font-size: 12px;
+    font-weight: 500;
+    color: gray;
+}
+
 .widgets__widgetContainer {
     margin-top: 15px;
     margin-left: 20px;

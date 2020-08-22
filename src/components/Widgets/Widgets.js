@@ -6,13 +6,25 @@ import {
     TwitterTweetEmbed
 } from 'react-twitter-embed';
 import SearchIcon from '@material-ui/icons/Search';
+import { Button } from '@material-ui/core';
+import LoginModal from '../LoginModal/LoginModal';
+import useLoginModal from '../LoginModal/useLoginModal';
 
-function Widgets() {
+function Widgets(props) {
+
+    const {isShowing, toggle} = useLoginModal();
+
     return (
         <div className="widgets">
             <div className="widgets__input">
                 <SearchIcon className="widgets__searchIcon" />
                 <input placeholder="Search Twitter" type="text" />
+            </div>
+            <div className="widgets__signUp">
+                <h2>New here?</h2>
+                <p>Sign up here to gain access to full functionality!</p>
+                <Button variant="outlined" className="sidebar__tweet" onClick={toggle} fullWidth>Sign Up</Button>
+                <LoginModal isShowing={isShowing} hide={toggle} />
             </div>
             <div className="widgets__widgetContainer">
                 <h2>What's happening</h2>
