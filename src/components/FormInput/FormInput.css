@@ -1,0 +1,40 @@
+.formInput {
+    background-color: var(--twitter-background);
+    color: dimgray;
+    border-bottom: 2px solid dimgray;
+    padding: 10px;
+}
+
+.formInput__noCount {
+    margin-bottom: 30px;
+}
+
+.formInput:focus-within {
+    background-color: var(--twitter-background);
+    color: var(--twitter-color);
+    border-bottom: 2px solid var(--twitter-color);
+    padding: 10px;
+}
+
+.formInput > h2 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.formInput > input {
+    border: none;
+    outline: none;
+    background-color: var(--twitter-background);
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.formInput__charCount {
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+    text-align: right;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
