@@ -42,7 +42,7 @@ function TweetBox() {
                     value={tweetImage}
                     onChange={(e) => setTweetImage(e.target.value)} 
                     className="tweetBox__imageInput" 
-                    placeholder="Enter image URL" 
+                    placeholder="Enter gif URL (Giphy only!)" 
                     type="text"
                 />
                 <Button onClick={sendTweet} type="submit" className="tweetBox__button">Tweet</Button>
