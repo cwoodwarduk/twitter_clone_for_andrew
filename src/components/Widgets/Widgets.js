@@ -16,10 +16,10 @@ function Widgets() {
             </div>
             <div className="widgets__widgetContainer">
                 <h2>What's happening</h2>
-                <TwitterTweetEmbed tweetId={"1283395388825841666"} />
+                <TwitterTweetEmbed tweetId={"958675785816072192"} />
                 <TwitterTimelineEmbed 
                     sourceType="profile"
-                    screenName="DougStanhope"
+                    screenName="baddadjokes"
                     options={{ height: 400 }}
                 />
                 <TwitterShareButton 
