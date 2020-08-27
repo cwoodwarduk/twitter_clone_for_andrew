@@ -1,5 +1,12 @@
 .widgets {
     flex: 0.3;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.widgets::-webkit-scrollbar {
+    display: none;
 }
 
 .widgets__input {
@@ -53,6 +60,27 @@
     margin-top: 20px !important;
 }
 
+.widgets__logoutContainer {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.widgets_logoutButton {
+    background-color: white !important;
+    border: 1px solid var(--twitter-color) !important;
+    color: var(--twitter-color) !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    height: 50px !important;
+    width: 100% !important;
+    padding-left: 20px !important;
+}
+
+.widgets_logoutButton:hover {
+    background-color: var(--twitter-background) !important;
+}
+
 .widgets__widgetContainer {
     margin-top: 15px;
     margin-left: 20px;
@@ -64,4 +92,5 @@
 .widgets__widgetContainer > h2 {
     font-size: 18px;
     font-weight: 800;
+    margin-bottom: 20px;
 }

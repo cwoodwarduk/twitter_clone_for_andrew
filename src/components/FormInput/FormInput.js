@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import './FormInput.css';
 
-function FormInput({fieldName, charLimit}) {
+
+function FormInput({fieldName, fieldType, charLimit, setInput}) {
 
     const [charCount, setCharCount] = useState(0);
 
-    // let charCount = 0;
+    const setStates = (e) => {
 
-    // const setCharCount = (e) => {
-    //     e.stopPropogation();
-    //     console.log('blah');
-    // }
+        setCharCount(e.target.value.length);
+        
+        setInput(e.target.value);
+
+        e.preventDefault();
+    }
     
     if (charLimit !== 0) {
         return (
             <div>
                 <div className="formInput">
                     <h2>{fieldName}</h2>
-                    <input type="text" onKeyUp={(e) => setCharCount(e.target.value.length)}/>
+                    <input type={fieldType} onKeyUp={(e) => setStates(e)} />
                 </div>
                 <div className="formInput__charCount">{charCount}/{charLimit}</div>
             </div>
@@ -27,7 +30,7 @@ function FormInput({fieldName, charLimit}) {
             <div>
                 <div className="formInput formInput__noCount">
                     <h2>{fieldName}</h2>
-                    <input type="text" />
+                    <input type={fieldType} onKeyUp={(e) => setStates(e)} />
                 </div>
             </div>
         )

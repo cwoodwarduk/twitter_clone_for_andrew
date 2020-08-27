@@ -1,0 +1,70 @@
+.footer {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80vw; 
+}
+
+.footer__left {
+    flex: 0.3;
+}
+
+.footer__centre {
+    flex: 0.4;
+    min-width: fit-content;
+    padding: 10px;
+}
+
+.footer__centre > p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer__right {
+    flex: 0.3;
+    justify-content: flex-end !important;
+    align-items: center;
+}
+
+.footer_buttonContainer {
+    display: flex;
+    justify-content: right;
+}
+
+.footer__loginButton {
+    background-color: var(--twitter-color) !important;
+    border: 1px solid white !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    width: 90px;
+    height: 40px !important;
+    margin-top: 15px !important;
+    margin-right: 15px !important;
+    justify-self: right !important;
+}
+
+.footer__loginButton:hover {
+    background-color: #4ab4f5 !important;
+}
+
+.footer__signupButton {
+    background-color: white !important;
+    border: none !important;
+    color: var(--twitter-color) !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    width: 90px;
+    height: 40px !important;
+    margin-top: 15px !important;
+    margin-right: 15px !important;
+    justify-self: right !important;
+}
+
+.footer__signupButton:hover {
+    background-color: var(--twitter-background) !important;
+}

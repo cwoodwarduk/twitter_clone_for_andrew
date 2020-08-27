@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './LoginModal.css';
+import './SignupModal.css';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FormInput from '../FormInput/FormInput';
 import { Button } from '@material-ui/core';
@@ -7,11 +7,12 @@ import CloseIcon from '@material-ui/icons/Close';
 import authMethods from '../../firebase/authmethods';
 import firebase from 'firebase';
 
-function LoginModal({handleOpen}) {
+function SignupModal({handleOpen}) {
 
+    const [name, setName] = useState("");
+    const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    // const [userId, setUserId] = useState("");
 
     const closeHandler = (e) => {
         e.preventDefault();
@@ -20,41 +21,44 @@ function LoginModal({handleOpen}) {
         handleOpen(false);
     }
 
-    const loginHandler = (e) => {
+    const signupHandler = (e) => {
         e.preventDefault();
-        authMethods.signin(email, password);
+        console.log(name);
+        console.log(username);
+        authMethods.signup(email, password);
         firebase.auth().onAuthStateChanged(firebaseUser => {
             if(firebaseUser){
-                console.log('Logged in.');
+                console.log(firebaseUser);
             } else {
-                console.log('Not logged in.');
+                console.log('Not logged in.')
             }
-        });
+        })
     }
 
     return (
-        <div className="loginModal" id="modal">
+        <div className="signupModal" id="modal">
 
-            <div className="loginModal__modalBox" >
+            <div className="signupModal__modalBox" >
 
-                <div className="loginModal__top">
-                    <TwitterIcon className="loginModal__twitterIcon" />
-                    <CloseIcon className="loginModal__closeButton" onClick={(e) => closeHandler(e)} />
+                <div className="signupModal__top">
+                    <TwitterIcon className="signupModal__twitterIcon" />
+                    <CloseIcon className="signupModal__closeButton" onClick={(e) => closeHandler(e)} />
                 </div>
 
-                <h2>Login</h2>
+                <h2>Create Account</h2>
 
+                <FormInput fieldName="Name" fieldType="text" charLimit={50} setInput={setName} />
+                <FormInput fieldName="Username" fieldType="text" charLimit={50} setInput={setUsername} />
                 <FormInput fieldName="Email" fieldType="email" charLimit={0} setInput={setEmail} />
                 <FormInput fieldName="Password" fieldType="password" charLimit={0} setInput={setPassword} />
 
-                {/* <Button variant="outlined" className="loginModal_signUpButton" fullWidth>Login/Create Account</Button> */}
                 <Button 
                     variant="outlined" 
-                    className="loginModal_signUpButton" 
-                    onClick={(e) => loginHandler(e)} 
+                    className="signupModal_signUpButton" 
+                    onClick={(e) => signupHandler(e)} 
                     fullWidth
                 > 
-                    Login
+                    Create Account
                 </Button>
 
 
@@ -65,4 +69,4 @@ function LoginModal({handleOpen}) {
     
 }
 
-export default LoginModal;
+export default SignupModal;

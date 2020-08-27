@@ -4,7 +4,7 @@ import { Avatar, Button } from '@material-ui/core';
 import db from '../../firebase/firebase';
 import firebase from 'firebase';
 
-function TweetBox() {
+function TweetBox({isAuth, userData}) {
 
     const [tweetMessage, setTweetMessage] = useState("");
     const [tweetImage, setTweetImage] = useState("");
@@ -13,9 +13,10 @@ function TweetBox() {
         e.preventDefault();
 
         db.collection('posts').add({
-            avatar: "https://avatars2.githubusercontent.com/u/54438992?s=400&u=1851015ae1e0dc7269acf7ac41194e6ab8fb0672&v=4",
-            displayName: "Calum",
-            username: "cwdevuk",
+            id: firebase.firestore.uid,
+            avatar: userData.avatar,
+            displayName: userData.name,
+            username: userData.username,
             verified: true,
             postedAt: firebase.firestore.Timestamp.fromDate(new Date()),
             text: tweetMessage,

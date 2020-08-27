@@ -1,4 +1,6 @@
-.loginModal {
+
+
+.signupModal {
     position: fixed;
     display: flex;
     align-items: center;
@@ -11,27 +13,27 @@
     height: 100%;
 }
 
-.loginModal__modalBox {
+.signupModal__modalBox {
     flex: 0.45;
     align-items: center;
     justify-content: center;
-    height: 370px;
+    height: 580px;
     background: white;
     border-radius: 20px;
     padding: 30px;
 }
 
-.loginModal__top {
+.signupModal__top {
     display: flex;
 }
 
-.loginModal__twitterIcon {
+.signupModal__twitterIcon {
     color: var(--twitter-color) !important;
     font-size: 30px !important;
     margin-bottom: 20px;
 }
 
-.loginModal__closeButton {
+.signupModal__closeButton {
     color: var(--twitter-color) !important;
     font-size: 30px !important;
     margin-left: auto;
@@ -39,13 +41,13 @@
     cursor: pointer;
 }
 
-.loginModal__modalBox > h2 {
+.signupModal__modalBox > h2 {
     font-size: 22px;
     margin-bottom: 30px;
     color: black;
 }
 
-.loginModal_signUpButton {
+.signupModal_signUpButton {
     background-color: var(--twitter-color) !important;
     border: none !important;
     color: white !important;
@@ -55,3 +57,4 @@
     height: 50px !important;
     margin-top: 20px !important;
 }
+
